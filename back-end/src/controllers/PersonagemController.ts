@@ -1,23 +1,12 @@
-import { v4 } from 'uuid';
 import { Request, Response } from 'express';
-import Knex from '../config/database';
+import PersonagemRepository, { Personagem, IPersonagem } from '../repository/PersonagemRepository';
 
-interface PersonagemReq {
-  nome: string;
-  descricao_curta: string;
-  descricao_completa: string;
-  url_imagem: string;
-}
-
-export interface IPersonagem extends PersonagemReq {
-  id: string;
-}
-
-export default class Personagem {
+export default class PersonagemController {
 
   async index (req: Request, res: Response): Promise<Response<IPersonagem[]>> {
     try {
-      const personagens: IPersonagem[] = await Knex('personagens');
+      const personagemRepository = new PersonagemRepository();
+      const personagens = await personagemRepository.index();
       return res.status(200).json(personagens);
     } catch (error) {
       return res.status(500).json(error);
@@ -26,17 +15,11 @@ export default class Personagem {
 
   async create (req: Request, res: Response): Promise<Response> {
 
-    const personagem: PersonagemReq = req.body;
+    const personagem: Personagem = req.body;
 
     try {
-      await Knex('personagens').insert({
-        id: v4(),
-        nome: personagem.nome,
-        descricao_curta: personagem.descricao_curta,
-        descricao_completa: personagem.descricao_completa,
-        url_imagem: personagem.url_imagem
-      })
-
+      const personagemRepository = new PersonagemRepository();
+      await personagemRepository.create(personagem);
       return res.status(200).json({ message: 'OK'});
     } catch (error) {
       return res.status(500).json(error);
@@ -47,8 +30,9 @@ export default class Personagem {
     const { id } = req.params
 
     try {
-      const personagem: IPersonagem[] = await Knex.select('*').from('personagens').where({ id: id })
-      return res.status(200).json(personagem[0]);
+      const personagemRepository = new PersonagemRepository();
+      const personagem: IPersonagem = await personagemRepository.findById(id)
+      return res.status(200).json(personagem);
     } catch (error) {
       return res.status(500).json(error);
     }
@@ -58,7 +42,8 @@ export default class Personagem {
     const personagem: IPersonagem = req.body;
 
     try {
-      await Knex.update(personagem).from('personagens').where({ id: personagem.id });
+      const personagemRepository = new PersonagemRepository();
+      await personagemRepository.update(personagem);
       return res.status(200).json(personagem);
     } catch (error) {
     return res.status(500).json(error);
@@ -69,7 +54,8 @@ export default class Personagem {
     const { id } = req.params
 
     try {
-      await Knex.delete().from('personagens').where({id: id});
+      const personagemRepository = new PersonagemRepository();
+      await personagemRepository.delete(id);
       return res.status(200).json({message: 'OK'});
     } catch (error) {
       return res.status(500).json(error);

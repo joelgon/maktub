@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { celebrate, Joi, errors, Segments } from "celebrate";
-import Personagem from "../query/personagem";
+import Personagem from "../controllers/PersonagemController";
 
 export default class Routes {
   private Personagem : Personagem = new Personagem();

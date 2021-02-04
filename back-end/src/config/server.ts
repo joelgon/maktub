@@ -1,11 +1,13 @@
 import express from 'express';
-import Routes from './routes';
 import Cors from 'cors';
 import bodyParser from 'body-parser';
+import Routes from './routes';
 
-export class Server {
+export default class Server {
   private express: express.Application;
+
   private port: number;
+
   private routes: Routes = new Routes();
 
   public constructor() {
@@ -19,6 +21,6 @@ export class Server {
 
   public async listen(): Promise<void> {
     await this.express.listen(this.port);
-    console.log("server listening on port: " + this.port);
+    console.log(`server listening on port: ${this.port}`);
   }
 }

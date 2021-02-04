@@ -1,12 +1,12 @@
 import knex from 'knex';
 
 const options = {
-  client: "mysql2",
+  client: 'mysql2',
   connection: {
-    host: "mysql742.umbler.com",
-    user: "testejoel",
-    password: "joelMAKTUB2021",
-    database: "testejoel",
+    host: 'mysql742.umbler.com',
+    user: 'testejoel',
+    password: 'joelMAKTUB2021',
+    database: 'testejoel',
     port: 41890,
   },
 };

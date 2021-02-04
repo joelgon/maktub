@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import Knex from '../config/database';
+import BaseError from '../utils/errors';
 
 export interface Personagem {
   nome: string;
@@ -13,12 +14,11 @@ export interface IPersonagem extends Personagem {
 }
 
 export default class PersonagemRepository {
-
   async index(): Promise<IPersonagem[]> {
     try {
       return await Knex('personagens');
     } catch (error) {
-      return error
+      throw new BaseError(error, 500);
     }
   }
 
@@ -29,16 +29,19 @@ export default class PersonagemRepository {
         nome: personagem.nome,
         descricao_curta: personagem.descricao_curta,
         descricao_completa: personagem.descricao_completa,
-        url_imagem: personagem.url_imagem
-      })
+        url_imagem: personagem.url_imagem,
+      });
     } catch (error) {
-      return error;
+      throw new BaseError(error, 500);
     }
   }
 
   async findById(id: string): Promise<IPersonagem> {
     try {
-      const personagem: IPersonagem = await Knex.select('*').from('personagens').where({ id: id }).first();
+      const personagem: IPersonagem = await Knex.select('*')
+        .from('personagens')
+        .where({ id })
+        .first();
       return personagem;
     } catch (error) {
       return error;
@@ -47,18 +50,19 @@ export default class PersonagemRepository {
 
   async update(personagem: IPersonagem): Promise<void> {
     try {
-      await Knex.update(personagem).from('personagens').where({ id: personagem.id });
+      await Knex.update(personagem)
+        .from('personagens')
+        .where({ id: personagem.id });
     } catch (error) {
-      return error;
+      throw new BaseError(error, 500);
     }
   }
 
   async delete(id: string): Promise<void> {
     try {
-      await Knex.delete().from('personagens').where({id: id});
+      await Knex.delete().from('personagens').where({ id });
     } catch (error) {
-      return error;
+      throw new BaseError(error, 500);
     }
   }
-
 }

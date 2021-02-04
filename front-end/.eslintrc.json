@@ -27,8 +27,19 @@
   "rules": {
     "prettier/prettier": "error",
     "no-use-before-define": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-console": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/camelcase": "off",
+    "react-hooks/exhaustive-deps":  "warn",
+    "@typescript-eslint/no-empty-interface": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/jsx-curly-newline": "off",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
     "camelcase": "off",
@@ -39,6 +50,12 @@
       {
         "ts": "never",
         "tsx": "never"
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
       }
     ]
   },

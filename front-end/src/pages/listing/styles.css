@@ -1,0 +1,31 @@
+.body-listing {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.card {
+  width: 70vw;
+  height: calc(100vh - 80px - 20px - 90px);
+  margin-top: 20px;
+  background-color: #DCDCDC;
+  box-shadow: 3px 5px #808080;
+  border: 1px solid #DCDCDC;
+  padding: 30px;
+}
+
+.handler-img {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}

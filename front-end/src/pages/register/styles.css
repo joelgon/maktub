@@ -1,0 +1,115 @@
+.body-register {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  background-image: url('../../assets/image/final_Fantasy.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.resgister {
+  width: calc(35% - 60px);
+  height: calc(82% - 60px);
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  padding: 30px;
+  background-color: #006400;
+}
+
+.label-float {
+  margin-top: 0px;
+  padding-top: 0px;
+  text-align: start;
+  position: relative;
+  margin-top: 30px;
+}
+
+.label-float input {
+  outline: none;
+  /* min-width: 250px; */
+  position: relative;
+  top: 0;
+  width: calc(100% - 40px);
+  color: white;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  -webkit-appearance: none;
+  transition: all 0.1s linear;
+  border: 1.5px solid #7CFC00;
+  background-color: transparent;
+  -moz-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+}
+
+.label-float input::placeholder {
+  color: transparent;
+}
+
+.label-float input:required:invalid + label:after {
+  content: "*";
+}
+
+.label-float textarea {
+  outline: none;
+  width: calc(100% - 40px);
+  height: 110px;
+  max-width: 98%;
+  color: white;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  -webkit-appearance: none;
+  transition: all 0.1s linear;
+  border: 1.5px solid #7CFC00;
+  background-color: transparent;
+  -moz-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+}
+
+.label-float textarea:required:invalid + label:after {
+  content: "*";
+}
+
+.label-float label {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  transform: translateY(-50%);
+  padding: 5px;
+  color: white;
+  font-size: 22px;
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  transition: all 0.1s linear;
+  background-color: #006400;
+  -moz-transition: all 0.1s linear;
+  -webkit-transition: all 0.1s linear;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label {
+  font-size: 22px;
+  /* top: 0; */
+}
+
+.button-green {
+  width: 100%;
+  border: 1px solid #7CFC00;
+  background-color: #7CFC00;
+  border-radius: 30px;
+  height: 51px;
+  margin-top: 15px;
+  color: #FFF;
+  font-weight: 900;
+  font-size: 22px;
+  cursor: pointer;
+}

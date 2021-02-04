@@ -1,9 +1,13 @@
 import React from 'react'
 
-// import { Container } from './styles';
+import './styles.css'
 
 const update: React.FC = () => {
-  return <div style={{ width: '100vw', height: '100vh' }} />
+  return (
+    <div className="body">
+      <div className="body-update" />
+    </div>
+  )
 }
 
 export default update

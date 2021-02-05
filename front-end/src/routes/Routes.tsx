@@ -18,7 +18,7 @@ const routes: React.FC = () => {
           <Register />
         </Route>
 
-        <Route exact path="/update">
+        <Route exact path="/update/:id">
           <Update />
         </Route>
       </Switch>

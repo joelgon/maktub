@@ -1,5 +1,172 @@
 .body-update {
   width: 100vw;
   height: calc(100vh - 80px);
-  background-color: pink;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/image/starfall.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.card-complete {
+  width: 50%;
+  height: 90%;
+  background-color: #006400;
+  padding: 20px;
+  display: flex;
+}
+
+.card-complete span {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-complete span img {
+  max-width: 100%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+
+.all-info-personagem {
+  width: calc(70% - 20px);
+  height: calc(100% - 20px);
+  padding: 10px;
+}
+
+.all-info-personagem .label-float textarea {
+  overflow: hidden;
+  display: inline-block;
+  padding-top: 15px;
+}
+
+.custom-button {
+  margin-top: 15px;
+  font-size: 14px;
+  height: 30px;
+}
+
+.Yellow {
+  background-color: #FFFF00;
+  border-color: #FFFF00;
+}
+
+.red {
+  background-color: red;
+  border-color: red;
+}
+
+@media only screen and (max-width: 500px) {
+  .card-complete {
+    width: 100%;
+  }
+
+  .all-info-personagem .label-float label {
+    font-size: 16px !important;
+  }
+}
+
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+  .all-info-personagem {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0px;
+    height: calc(100% - 140px);
+    width: calc(75% - 20px);
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  .all-info-personagem {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0px;
+    height: calc(100% - 240px);
+    width: calc(75% - 20px);
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .all-info-personagem .label-float label {
+    font-size: 16px !important;
+  }
+}
+
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+  .all-info-personagem {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0px;
+    height: calc(100% - 140px);
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .all-info-personagem {
+      display: flex;
+      flex-direction: column;
+      padding: 100px 0px;
+      height: calc(100% - 220px);
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .all-info-personagem .label-float {
+      width: 100%;
+    }
+}
+
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .all-info-personagem {
+      display: flex;
+      flex-direction: column;
+      padding: 100px 0px;
+      height: calc(100% - 220px);
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .all-info-personagem .label-float {
+      width: 100%;
+    }
+}
+
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (orientation:portrait)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .all-info-personagem {
+      display: flex;
+      flex-direction: column;
+      padding: 50px 0px;
+      height: calc(100% - 120px);
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .all-info-personagem .label-float {
+      width: 100%;
+    }
+
+    .card-complete {
+      height: 50%;
+    }
 }

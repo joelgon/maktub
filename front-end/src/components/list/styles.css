@@ -1,0 +1,80 @@
+.body-list {
+  width: 100%;
+  height: calc(100vh - 80px - 50px);
+  display: grid;
+  grid-template-areas: "span-1 span-2 span-3" "span-4 span-5 span-6" "span-7 span-8 span-9";
+  grid-gap: 10px;
+  grid-template-rows: 33% 1fr 33%;
+  grid-template-columns: 33% 1fr 33%;
+  padding-top: 10px;
+}
+
+.card {
+  display: flex;
+  background-color: #006400;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #008000;
+}
+
+.avatar {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-avatar {
+  max-width: 80%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+
+.infos {
+  width: calc(70% - 20px);
+  height: calc(100% - 20px);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.personagem-nome {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: #FFF;
+}
+
+.personagem-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #FFF;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .body-list {
+    grid-template-areas: "span-1" "span-2" "span-3" "span-4" "span-5" "span-6" "span-7" "span-8" "span-9";
+    padding: 10px;
+    overflow-y: auto;
+    height: calc(100vh - 80px - 50px - 24px);
+    width: calc(97% - 10px);
+    grid-template-rows: repeat(9, 30%);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card {
+    width: 100%;
+  }
+}

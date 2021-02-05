@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 
 import './styles.css'
 
-interface Personagem {
+import { personagemApi } from '../../services/api'
+
+export interface Personagem {
   nome: string
   descricao_curta: string
   descricao_completa: string
@@ -17,11 +19,16 @@ const Register: React.FC = () => {
     url_imagem: '',
   })
 
-  function registerPersonagem(
+  const registerPersonagem = async (
     event: React.MouseEvent | React.FormEvent<HTMLFormElement>,
-  ): void {
+  ): Promise<void> => {
     event.preventDefault()
-    console.log(personagem)
+    try {
+      const res = await personagemApi.post('create', personagem)
+      console.log(res.data)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -87,7 +94,7 @@ const Register: React.FC = () => {
 
         <button
           type="submit"
-          className="button-green"
+          className="button-green button-height"
           onClick={(e) => registerPersonagem(e)}
         >
           Cadastrar

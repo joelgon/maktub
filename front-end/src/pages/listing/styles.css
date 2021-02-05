@@ -2,30 +2,19 @@
   width: 100vw;
   height: calc(100vh - 80px);
   background-color: #F5F5F5;
-  display: flex;
-  justify-content: center;
-  overflow-y: auto;
 }
 
-.card {
-  width: 70vw;
-  height: calc(100vh - 80px - 20px - 90px);
-  margin-top: 20px;
-  background-color: #DCDCDC;
-  box-shadow: 3px 5px #808080;
-  border: 1px solid #DCDCDC;
-  padding: 30px;
-}
-
-.handler-img {
-  width: 40%;
-  height: 100%;
+.handler-buttons {
+  --gridheight: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  height: calc(100vh - var(--gridheight));
+  padding: 0 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.card-img {
-  width: 100%;
-  height: auto;
+.edit-button {
+  width: 20%;
+  min-width: 130px;
 }

@@ -1,6 +1,7 @@
 .body-register {
   width: 100vw;
   height: calc(100vh - 80px);
+  min-height: 500px;
   background-image: url('../../assets/image/final_Fantasy.gif');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -16,100 +17,60 @@
 .resgister {
   width: calc(35% - 60px);
   height: calc(82% - 60px);
+  min-width: 300px;
+  min-height: 400px;
   position: absolute;
+  max-height: 460px;
   top: 100px;
   right: 20px;
   padding: 30px;
   background-color: #006400;
 }
 
-.label-float {
-  margin-top: 0px;
-  padding-top: 0px;
-  text-align: start;
-  position: relative;
-  margin-top: 30px;
-}
-
-.label-float input {
-  outline: none;
-  /* min-width: 250px; */
-  position: relative;
-  top: 0;
-  width: calc(100% - 40px);
-  color: white;
-  font-size: 16px;
-  padding: 15px 20px;
-  border-radius: 30px;
-  -webkit-appearance: none;
-  transition: all 0.1s linear;
-  border: 1.5px solid #7CFC00;
-  background-color: transparent;
-  -moz-transition: all 0.1s linear;
-  -webkit-transition: all 0.1s linear;
-}
-
-.label-float input::placeholder {
-  color: transparent;
-}
-
-.label-float input:required:invalid + label:after {
-  content: "*";
-}
-
-.label-float textarea {
-  outline: none;
-  width: calc(100% - 40px);
-  height: 110px;
-  max-width: 98%;
-  color: white;
-  font-size: 16px;
-  padding: 15px 20px;
-  border-radius: 30px;
-  -webkit-appearance: none;
-  transition: all 0.1s linear;
-  border: 1.5px solid #7CFC00;
-  background-color: transparent;
-  -moz-transition: all 0.1s linear;
-  -webkit-transition: all 0.1s linear;
-}
-
-.label-float textarea:required:invalid + label:after {
-  content: "*";
-}
-
-.label-float label {
-  position: absolute;
-  top: 0;
-  left: 30px;
-  transform: translateY(-50%);
-  padding: 5px;
-  color: white;
-  font-size: 22px;
-  position: absolute;
-  pointer-events: none;
-  box-sizing: border-box;
-  transition: all 0.1s linear;
-  background-color: #006400;
-  -moz-transition: all 0.1s linear;
-  -webkit-transition: all 0.1s linear;
-}
-
-.label-float input:focus + label,
-.label-float input:not(:placeholder-shown) + label {
-  font-size: 22px;
-  /* top: 0; */
-}
-
-.button-green {
-  width: 100%;
-  border: 1px solid #7CFC00;
-  background-color: #7CFC00;
-  border-radius: 30px;
+.button-height {
   height: 51px;
   margin-top: 15px;
-  color: #FFF;
-  font-weight: 900;
-  font-size: 22px;
-  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .resgister {
+    width: calc(100% - 60px - 8px);
+    height: calc(100% - 80px - 60px -8px);
+    top: 84px;
+    right: 4px;
+    min-width: 0;
+  }
+
+  .body-register{
+    background-color: #F5F5F5;
+    background-image: none;
+  }
+}
+
+@media only screen and (max-height: 570px) {
+  .label-float {
+    margin-top: 15px;
+  }
+
+  .label-float label {
+    font-size: 15px !important;
+  }
+}
+
+@media only screen
+  and (min-width: 1024px)
+  and (max-height: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .resgister {
+      top: 30vh;
+    }
+}
+
+@media only screen
+  and (min-width: 768px)
+  and (max-height: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .resgister {
+      top: 25vh;
+    }
 }

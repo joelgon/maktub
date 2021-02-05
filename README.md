@@ -6,7 +6,7 @@
 
 # 2 back-end
   # 2.1  run the yarn path to install dependencies
-  # 2.2  to run the application use the command yarn dev
+  # 2.2  to run the application use the command yarn start
 
 # optional   
 

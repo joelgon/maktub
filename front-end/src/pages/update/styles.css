@@ -8,6 +8,7 @@
   background-image: url('../../assets/image/starfall.gif');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  min-height: 500px;
 }
 
 .card-complete {
@@ -16,6 +17,7 @@
   background-color: #006400;
   padding: 20px;
   display: flex;
+  min-height: 400px;
 }
 
 .card-complete span {
